@@ -2,7 +2,7 @@
 The academic section sends a lot of forms, and many times the fields in these forms repeat. We want to make it easier for students by sending forms where repeated fields from old forms are autofilled in any subsequent forms.
 
 # Demo 
-Fill this form [Form 1](https://forms.gle/yDqyv96saRoxaBnH9) & check your email.
+Fill this form [Form 1](https://forms.gle/yDqyv96saRoxaBnH9) with `Field 2`(inside form) set to Today's date & check your email.
 
 # Solution 1
 ## Steps 

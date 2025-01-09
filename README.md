@@ -8,8 +8,10 @@ Fill this form [Form 1](https://forms.gle/yDqyv96saRoxaBnH9) with `Field 2`(insi
 ## Steps 
 1. Let your first form be called Form 1, and its response sheet be called Sheet 1.
 2. Open Sheet 1, and for all the fields you want to be prefilled in Form 2, create a new column to format the data. Enter the following formula in the first cell: `=SUBSTITUTE(A2, " ", "+")` (assuming the field you want to be prefilled is in Column A).
-<img width="370" alt="ss1" src="https://github.com/user-attachments/assets/b1613348-daea-4738-9888-6a1f4af9ef34" /> 
-4. [Optional] If you want the email to be sent on a particular date entered by the form filler in Form 1, create a new column (let's call it "Today" for now) and enter the following formula in the first cell: `=IF(B2=TODAY(), "Yes", "No")` (assuming B2 contains the date on which you want to send the email). **Note that this column auto-updates itself in Google Sheets every day. You can set a time trigger to run the job every 24 hours so that emails will be sent on the date entered in the form.**
+   
+<img width="370" alt="ss1" src="https://github.com/user-attachments/assets/b1613348-daea-4738-9888-6a1f4af9ef34" />
+
+3. [Optional] If you want the email to be sent on a particular date entered by the form filler in Form 1, create a new column (let's call it "Today" for now) and enter the following formula in the first cell: `=IF(B2=TODAY(), "Yes", "No")` (assuming B2 contains the date on which you want to send the email). **Note that this column auto-updates itself in Google Sheets every day. You can set a time trigger to run the job every 24 hours so that emails will be sent on the date entered in the form.**
   <<Image 2>>
 5. Add the Autocrat extension to Sheet 1 & create a job as described in next steps.
 <<Image 3 & 4>>

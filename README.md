@@ -10,6 +10,7 @@ The academic section sends a lot of forms, many times the fields in the forms re
 2. Now you want to send a new form to students which have some common fields from form 1 let's call the new form be form 2 & it's response sheet be sheet 2
 3. Open sheet 1 & add Autocrat extension to it :
 
+<img src="https://github.com/Acad-Sec-IITPKD/Acad_Section_Intern_Work/blob/main/Assets/Images/ss1.png" height = 400 width = 400>
 
 
 # Solution 2

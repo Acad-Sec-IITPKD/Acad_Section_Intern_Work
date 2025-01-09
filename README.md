@@ -1,16 +1,36 @@
 # Problem
-The academic section sends a lot of forms, many times the fields in the forms repeat. We want to make it easier for students and send forms such that repeated fields in old forms will be autofilled in the forms sent again.
+The academic section sends a lot of forms, and many times the fields in these forms repeat. We want to make it easier for students by sending forms where repeated fields from old forms are autofilled in any subsequent forms.
 
-[Solution 1 - No Coding](# Solution 1)
-[Solution 2 - Coding](# Solution 2)
+# Demo 
+Fill this form [Form 1](https://forms.gle/yDqyv96saRoxaBnH9) & check your email.
 
 # Solution 1
 ## Steps 
-1. Let the previous form used be called as form 1 & response sheet as sheet 1
-2. Now you want to send a new form to students which have some common fields from form 1 let's call the new form be form 2 & it's response sheet be sheet 2
-3. Open sheet 1 & add Autocrat extension to it :
+1. Let your first form be called Form 1, and its response sheet be called Sheet 1.
+2. Open Sheet 1, and for all the fields you want to be prefilled in Form 2, create a new column to format the data. Enter the following formula in the first cell: `=SUBSTITUTE(A2, " ", "+")` (assuming the field you want to be prefilled is in Column A).
+<<Image 1>> 
+3. [Optional] If you want the email to be sent on a particular date entered by the form filler in Form 1, create a new column (let's call it "Today" for now) and enter the following formula in the first cell: `=IF(B2=TODAY(), "Yes", "No")` (assuming B2 contains the date on which you want to send the email). **Note that this column auto-updates itself in Google Sheets every day. You can set a time trigger to run the job every 24 hours so that emails will be sent on the date entered in the form.**
+  <<Image 2>>
+4. Add the Autocrat extension to Sheet 1 & create a job as described in next steps.
+<<Image 3 & 4>>
+5. Add a Google Doc template to Autocrat that you want to be mailed to the form filler.
+<<Image 5>>
+6. You can use the entries filled in the form to automatically update the document being sent by using `<<Column_Name>>` inside the Google Doc. Example:
+   ```
+   Hi <<Name>>,
 
-<img src="https://github.com/Acad-Sec-IITPKD/Acad_Section_Intern_Work/blob/main/Assets/Images/ss1.png" height = 400>
-
+   Thank you for filling the form.
+   Read this for more information : https://github.com/Acad-Sec-IITPKD/Acad_Section_Intern_Work
+   ```
+7. Ensure that all Autocrat-generated files are saved in a specific destination folder so it will be easier to clean up the files later.
+<<Image 6>>
+8. [Optional] Set a merge condition (as shown in the image below) if you want the email to be sent only on a particular date.
+<<Image 7>>
+9. Get a prefill link for Form 2.
+<<Image 8>> 
+10. Include the prefilled link inside the email content, using the formatted columns as parameters inside the link (as shown in the image below).
+<<Image 9>>
+12. Set a time trigger for every 24 hours so that Autocrat runs the job daily.
+13. [Optional] If you want two emails to be sent—one immediately after filling out the form with a document and one on a later date entered in the form—you can create two separate Autocrat jobs for the same.
 
 # Solution 2
